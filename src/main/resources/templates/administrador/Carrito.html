@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/comprapro.css}">
+  <link rel="shortcut icon" href="../img/logoCityHunter.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title> COMPRA CITY HUNTER </title>
+  <body>
+    <header class="header">
+        <nav class="cd">
+            <a th:href= "@{/menu}">Inicio</a>
+            <a th:href="@{/newUserCliente}">Registrarse</a>
+            <a th:href="@{/menuST}">Servicio Técnico</a>
+        </nav>
+    </header>
+    <main class="main-container">
+    <section class="content">
+      <article class="gallery">
+        <div class="gallery__image-container">
+          <div class="producto" th:each="producto:${producto}">
+            <img  float="left" style="width: 290px;height: 290px" th:src="@{/imagenes/} + ${producto.imagen}" th:alt="${producto.imagen}"  />
+        </div>
+      </article>
+
+      <article class="details">
+        <h2 class="details__company">CITY HUNTER</h2>
+        <div class="producto" th:each="producto:${producto}">
+          <td th:text="${producto.nombre}"></td>
+          <p class="details__description">Calzado especializado para los infantes que padecen de pie plano, calzado ortopedico.</p>
+          <div class="details__prices">
+            <H2>PRECIO PRODUCTO</H2>
+            <span th:text="${producto.precio}" ></span>
+            <h1>CAPACIDAD-TALLA</h1>
+            <label th:text="${producto.talla_capacidad}"></label>
+          </div>
+        </div>
+        <nav class="details__product-quantity">
+
+
+<form th:action="@{/carritovista} "  method="post">
+    <nav class="input">
+            <div class="input">
+
+                <input type="number" name="idProducto" th:value="${producto.id}" style="display: none">
+                <input type="text" name="nombreProducto" th:value="${producto.nombre}" style="display: none">
+              <input  name="cantidad" min="1" th:max="${producto.cantidad}" type="number" required>
+            </div>
+          <button class="details__button"> <a type="submit"> Añadir al Carrito</a> </button>
+        </form>
+      </article>
+    </section>
+
+    <!-- inicio cart modal -->
+    <div class="cart-modal">
+      <p class="cart-modal__title">añdir carrito</p>
+      <div class="cart-modal__chekout-container">
+        <div class="cart-modal__details-container">
+
+          <div class="producto"  th:each="detalleVenta:${detalleVenta}" >
+            <img style="width: 80px;height: 80px" th:src="@{/imagenes/} + ${detalleVenta.productos.imagen}"  />
+
+          <span th:text="${detalleVenta.productos.nombre}"  />
+          </div>
+          <div class="producto"   th:each="detalleVenta:${detalleVenta}"  >
+
+            <td th:text="${detalleVenta.productos.nombre}"></td>
+            <p class="cart-modal__price"> <span th:text="${detalleVenta.cantidad} " > </span> <span th:text="${detalleVenta.cantidad}  " ></span> </p>
+          </div>
+
+
+          <img class="cart-modal__delete"  th:src="@{/img/images/icon-delete.svg}" alt="delete">
+       </div>
+        <a class="cart-modal__chekount" th:href="@{/IniciarSesion}" > COMPRAR</a>
+        <br>
+        <a class="cart-modal__chekount" th:href="@{/ventas}">Seguir comprando</a>
+        </div>
+      </div>
+    </div>
+    <!-- fin cart modal -->
+ </main>
+    <!-- fin gallery modal -->
+
+
+  <footer>
+    <div class="contenedor-footer">
+      <div class="content-foo">
+        <h4>Telefono</h4>
+        <p>+57 3138832693</p>
+      </div>
+      <div class="content-foo">
+        <h4>email</h4>
+        <p>54844</p>
+      </div>
+      <div class="content-foo">
+        <h4>Dirrecion</h4>
+        <p>6545454</p>
+      </div>
+    </div>
+    <h2 class="titulo-final">&copy;CityHunterShop | Proyect CJA</h2>
+  </footer>
+
+  </body>
+  </html>

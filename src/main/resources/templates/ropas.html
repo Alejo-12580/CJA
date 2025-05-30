@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <link rel="stylesheet" th:href="@{/css/ropas.css}">
+  <link rel="shortcut icon" href="../img/logoCityHunter.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title> ROPA </title>
+
+</head>
+<body>
+<header class="header">
+
+  <header class="header">
+
+    <nav >
+      <a th:href="@{/menu}">Inicio</a>
+      <a th:href="@{/newUserCliente}">Registrarse</a>
+      <a th:href="@{/menuST}">Servicio Técnico</a>
+      <a href="Tienda">Tienda</a>
+    </nav>
+
+    <section class="textos-header">
+      <h1>CityHunter hecho para ti</h1>
+      <h2>Lo que deseas aquí lo encontrarás en nuestra tienda </h2>
+    </section>
+
+  </header>
+
+<main class="productoscontainer">
+
+  <h2>Tus productos</h2>
+</main>
+
+<main class="catalogocontainer">
+  <div class="producto-inf">
+   <div clas="producto" th:each="producto:${producto}">
+     <img  style="width: 290px;height: 290px" th:src="@{/imagenes/} + ${producto.imagen}" th:alt="${producto.imagen}" />
+     <br>
+     <td th:text="${producto.nombre}"></td>
+  <p>
+    Lorem ipsum dolor sit amet consectetur
+    adipisicing elit.ajhfdhfdsjj
+  </p>.
+  <span th:text="${producto.precio}" ></span>
+     <br>
+     <br>
+       <a th:href="@{'/Carrito/' + ${producto.id}}">SABER MAS</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="contenedor-footer">
+    <div class="content-foo">
+      <h4>Telefono</h4>
+      <p>+57 3138832693</p>
+    </div>
+    <div class="content-foo">
+      <h4>email</h4>
+      <p>54844</p>
+    </div>
+    <div class="content-foo">
+      <h4>Dirrecion</h4>
+      <p>6545454</p>
+    </div>
+  </div>
+  <h2 class="titulo-final">&copy;CityHunterShop | Proyect CJA</h2>
+</footer>
+
+</body>
+
+</html>

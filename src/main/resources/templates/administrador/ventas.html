@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/fondo.css}">
+    <link rel="shortcut icon" href="../img/logoCityHunter.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TIENDA CITY HUNTER </title>
+</head>
+
+<body>
+    <header class="header">
+
+        <nav class="inicio">
+            <a th:href="@{/menu}">Inicio</a>
+            <a th:href="@{/newUserCliente}">Registrarse</a>
+            <a th:href="@{/menuST}">Servicio Técnico</a>
+            <a th:href="@{/ventas}">Tienda</a>
+        </nav>
+
+</header>
+<section class="welcome">
+    <div class="welcome-1"> </div>
+    <div class="welcome-2">
+
+        <h2>BIENVENIDO A LA TIENDA CITY HUNTER</h2>
+        <p class="b1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+        </p>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, hic provident! Architecto
+            eos voluptatum, excepturi repellendus
+            molestiae sunt enim esse libero temporibus ut?
+            Eos, illo perspiciatis. Expedita rem atque minus.
+        </p>
+    </div>
+</section>
+
+<main class="servicios container">
+
+    <div class="servicios-txt">
+        <h2>NUESTROS PRODUCTOS </h2>
+    </div>
+</main>
+<div class="servicios-group">
+    <div class="servicios1">
+        <div clas="producto" th:each="categoria:${categoria}">
+            <img style="width: 300px;height: 300px" th:src="@{/imagenes/} + ${categoria.imagen}" th:alt="${categoria.imagen}" />
+            <br>
+            <td th:text="${categoria.id}"></td>
+            <td th:text="${categoria.nombre}"></td>
+            <p>
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit.ajhfdhfdsjj
+            </p>.
+            <nav >
+                <a th:href="@{'categoria/' + ${categoria.id}}">ver</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Telefono</h4>
+            <p>+57 3138832693</p>
+        </div>
+        <div class="content-foo">
+            <h4>email</h4>
+            <p>54844</p>
+        </div>
+        <div class="content-foo">
+            <h4>Dirrecion</h4>
+            <p>6545454</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

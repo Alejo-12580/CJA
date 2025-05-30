@@ -1,0 +1,207 @@
+
+<!DOCTYPE html >
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Producto</title>
+
+  <link rel="stylesheet" th:href="@{/css/RegistroProd.css}">
+  <link rel="shortcut icon" th:href="@{/img/logoCityHunter.png}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Dentro de la sección <head> -->
+
+</head>
+
+<body  style="background-image: url(/img/paredLadrillo.jpg);">
+<nav class="navbar" style="background-color: black;" >
+
+  <div class="container-fluid"   style="background-image: url(/img/BannerPG.png);background-size: cover ; height: 100px;">
+    <p class="navbar-brand" >
+
+    </p>
+
+    <div th:if="${user != null}" class="login">
+
+
+      <a class="botonMenu" th:href="@{#}">Ventas</a>
+      <a class="botonMenu" th:href="@{/listarAgenAdmin}">Servicio Tecnico</a>
+      <a class="botonMenu" th:href="@{/productos}">Inventario</a>
+
+      <a class="botonMenu" th:href="@{'cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+
+      <a th:text="${user.nombre}" style="color: white; font-family: Calibri"></a>
+
+      <a  th:href= "@{'editUser/'+${user.id}}" class="navbar-brand" href="#">
+        <img src="/img/avatar.png" alt="" width="50" height="45 ">
+
+      </a>
+
+
+    </div>
+    <div th:unless="${user != null}">
+
+    </div>
+
+
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2" >
+      <div class="izquierda">
+        <div class="input-group mb-3">
+          <button class="btn btn-danger" type="button" id="button-addon2"> <a th:href="@{/productos}"  style="text-decoration: none; color:white" >Atras</a></button>
+
+        </div>
+        <div th:if="${error!= null}">
+          <p th:text="${error}"></p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8" style="background-color:#9e9696;">
+      <div class=" derecha">
+        <h4>Registrar Producto</h4>
+        <form th:action="@{/seveProducto}" th:object="${producto}" method="POST" enctype="multipart/form-data">
+
+
+          <input th:field="*{id}" type="hidden">
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-">Nombre</span>
+            <input type="text" th:field="*{nombre}"  pattern=".{3,15}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+
+
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
+
+            <span th:each="categoria:${categoria}" th:if="${categoria.id == producto.categoria.id }" th:text="${categoria.nombre}" class="form-control" ></span>
+
+          </div>
+          <input type="hidden" th:field="*{categoria.id}">
+
+
+
+
+
+
+          <div class="input-group mb-2" >
+            <span class="input-group-text" id="inputGroup-sizing-default">Capacidad</span>
+            <select class="form-select" id="inputGroupSelectCapacidad" th:field="*{talla_capacidad}">
+              <option  selected th:each="capConsolas : ${capConsolas}" th:if="${capConsolas.categoria.id == producto.categoria.id }" th:value="${capConsolas.nombre.toLowerCase()}"  th:text="${capConsolas.nombre}" >
+            </select>
+          </div>
+
+          <div class="input-group mb-2" >
+            <span class="input-group-text" id="inputGroup-sizing-default">Modelos</span>
+            <select class="form-select" id="inputGroupSelectCapacidad" th:field="*{genero_modelo}">
+              <option  selected th:each="generos : ${generos}" th:if="${generos.categoria.id == producto.categoria.id }" th:value="${generos.nombre.toLowerCase()}"  th:text="${generos.nombre}" >
+            </select>
+          </div>
+
+
+
+          <input th:field="*{id}" type="hidden">
+
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-">Estado</span>
+            <select class="form-select" id="inputGroupSelect02" th:field="*{estado}">
+              <option  selected th:each="state : ${state}" th:value="${state}"  th:text="${state}" ></option>
+
+            </select>
+          </div>
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-default">Novedades</span>
+            <input type="text" th:field="*{novedades}"  pattern=".{3,105}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGrousizing-default">Diseño</span>
+            <input type="text" th:field="*{disenho}"  pattern=".{3,50}"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-default">Cantidad</span>
+            <input type="number" th:field="*{cantidad}"  pattern=".{0,5}" min="0" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
+            <input type="number"  th:field="*{precio}"  pattern="[0-9]{1,10}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div >
+
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-default">Foto</span>
+            <div>
+            <img th:if="${producto.imagen}" th:src="@{'/imagenes/' + ${producto.imagen}}"  style="width: 200px;height: 200px" />
+            </div><br>
+              <input type="file" name="imagen" th:field="*{imagen}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+          </div>
+
+
+
+          <div class="input-group mb-2">
+            <span class="input-group-text" id="inputGroup-sizing-default">Garantia</span>
+            <input type="date" id="fechaGarantia" th:field="*{garantia}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+          <script>
+            // Obtener el elemento del campo de fecha
+            var fechaOrdenInput = document.getElementById('fechaGarantia');
+
+            // Obtener la fecha actual en formato ISO (yyyy-MM-dd)
+            var fechaActual = new Date().toISOString().split('T')[0];
+
+            // Establecer la fecha mínima permitida como la fecha actual
+            fechaOrdenInput.min = fechaActual;
+          </script>
+          <div th:if="${mensaje !=null}">
+            <label th:text="${mensaje}" style="margin-right: 5%;margin-left: 5%;border: 2px solid black"></label>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-danger" type="submit">Registrar </button>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+
+  /*  function updateCapacidadOptions() {
+        var categoriaSelect = document.getElementById("inputGroupSelectCategoria");
+        var capacidadSelect = document.getElementById("inputGroupSelectCapacidad");
+
+        // Obtener el valor seleccionado de la categoría
+        var selectedCategoria = categoriaSelect.value;
+
+        // Limpiar las opciones actuales en el select de capacidad
+        while (capacidadSelect.firstChild) {
+            capacidadSelect.removeChild(capacidadSelect.firstChild);
+        }
+
+        // Añadir las opciones de capacidad asociadas a la categoría seleccionada
+        var capConsolasArray =JSON.parse(capCosolsas);
+
+        for (var i = 0; i < capConsolasArray.length; i++) {
+            if (capConsolasArray[i].categoria.id == selectedCategoria) {
+                var option = document.createElement("option");
+                option.value = capConsolasArray[i].id;
+                option.text = capConsolasArray[i].nombre;
+                capacidadSelect.appendChild(option);
+            }
+        }
+    }
+*/
+</script>
+
+</body>
+
+</html>

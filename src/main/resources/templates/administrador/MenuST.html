@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Tecnico CJA</title>
+    <link rel="shortcut icon" th:href="@{img/logoCityHunter.png}" type="image/x-icono">
+    <link rel="stylesheet" th:href="@{/css/MenuST.css}">
+</head>
+
+<body>
+<header>
+    <nav th:if="${user==null}">
+        <a th:href="@{/IniciarSesion}">Iniciar Sesión</a>
+        <a th:href="@{/newUserCliente}">Registrarse</a>
+        <a th:href="@{/menuST}">Servicio Técnico</a>
+        <a th:href="@{/menuST}">Servicio Técnico</a>
+        <a th:href="@{#}">Tienda</a>
+
+    </nav>
+    <nav th:unless="${user==null}">
+        <a th:href="@{/listarAgen}">Mis Servicios</a>
+        <a th:href="@{/listar}">Mis ordenes</a>
+        <a th:href="@{/listarDiag}">Mis diagnosticos</a>
+        <a th:href="@{'/cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+        <label style="color: white" th:text="${user.nombre}"></label>
+        <img src="/img/avatar.png" alt="" width="50" height="45 ">
+
+    </nav>
+</header>
+<main>
+    <section class="contenedor sobre-nosotros">
+        <h2 class="titulo">Servicios tecnicos</h2>
+        <h3 class="subtitulo">especializados en consolas de videojuegos, Pc y laptops</h3>
+        <div class="contenedor-sobre-nosotros">
+            <img src="img/servicioTecnico.jpg" alt="" style="height:280px ;width: 270px" class="imagen-about-us">
+            <div class="contenido-textos">
+                <h3><span>1</span>Correctivo</h3>
+                <p>¿Problemas con tu consola de videojuegos o PC?.
+                    Nuestro servicio correctivo especializado está listo para solucionar cualquier inconveniente.
+                    Desde reparaciones rápidas hasta optimización de rendimiento, somos tu equipo de expertos en juegos y tecnología.</p>
+                <h3><span>2</span>Preventivo</h3>
+                <p>Prevenir es la clave.Nuestro servicio preventivo te ofrece tranquilidad y rendimiento óptimo.
+                    Evita costosas averías y disfruta de un rendimiento constante.</p>
+                <h3><span>3</span>Modeo</h3>
+                <p>¿Quieres que tu consola de videojuegos o PC sea única? Nosotros te ayudamos a lograrlo.
+                    Desde diseños exclusivos hasta mejoras funcionales, ¡hacemos tus sueños realidad! lleva tu experiencia de juego al siguiente nivel.</p>
+                <a th:href="@{/new2}">Registra tu Consola o Pc</a>
+                <a th:href="@{/listar2}">Mis equipos</a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <!-- Tu contenido actual del footer -->
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <a href="https://api.whatsapp.com/send?phone=573138832693" target="_blank">
+                <img src="/img/whatsapp-logo.png" alt="WhatsApp" width="40" height="40">
+            </a>
+            <h4><p>+57 3138832693</p></h4>
+
+        </div>
+        <div class="content-foo">
+            <a href="https://www.instagram.com/city.hunter.shop/" target="_blank">
+                <img src="/img/instagram-logo.png" alt="WhatsApp" width="40" height="40">
+            </a>
+            <h4><p>city.hunter.shop</p></h4>
+
+        </div>
+        <div class="content-foo">
+            <a href="https://www.google.com/maps/place/Conjunto+Residencial+Pueblo+Nuevo+I/@4.6655046,-74.1576227,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f9c59191055a3:0x145b337fdeabf798!8m2!3d4.6654993!4d-74.1550478!16s%2Fg%2F11cs36k8z3?entry=ttu" target="_blank">
+                <img src="/img/Maps.png" alt="WhatsApp" width="40" height="40">
+            </a>
+            <h4><p> Nuestra Ubicacion</p></h4>
+
+        </div>
+    </div>
+    <h2 class="titulo-final">&copy; CityHunterShop | Project CJA</h2>
+</footer>
+
+</body>
+
+</html>

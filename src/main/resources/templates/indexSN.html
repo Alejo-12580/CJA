@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityHunter</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/img/logoCityHunter.png}" type="image/x-icon">
+    <link th:href="@{assets/img/ico/favicon.png}" rel="icon" type="image/png">
+    <link th:href="@{assets/img/ico/favicon.png}" rel="shortcut icon">
+    <link th:href="@{assets/img/ico/apple-touch-icon-144-precomposed.png}" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link th:href="@{assets/img/ico/apple-touch-icon-114-precomposed.png}" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link th:href="@{assets/img/ico/apple-touch-icon-72-precomposed.png}" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link th:href="@{assets/img/ico/apple-touch-icon-57-precomposed.png}" rel="apple-touch-icon-precomposed">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/icofont/icofont.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/venobox/venobox.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/owl.carousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{assets/vendor/aos/aos.css}" rel="stylesheet">
+
+    <!-- CSS -->
+    <link th:href="@{assets/css/styleSN.css}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <button class="mobile-nav-toggle d-xl-none" type="button"><i class="icofont-navigation-menu"></i></button>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img alt="" class="img-fluid rounded-circle" src="assets/img/profile-img.jpg">
+                <h1 class="text-light"><a href="index.html">CityHunter</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a class="facebook" href="https://www.facebook.com/CityHuntershop"><i class="bx bxl-facebook"></i></a>
+                    <a class="instagram" href="https://www.instagram.com/city.hunter.shop/"><i class="bx bxl-instagram"></i></a>
+                    <a class="whatsapp" href="https://api.whatsapp.com/send?phone=573138832693"><i class="bx bxl-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a th:href="@{/menu}"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
+                    <li><a href="#about"><i class="bx bx-user"></i> <span>Sobre nosotros</span></a></li>
+                    <li><a href="#proyectos"><i class="bx bx-book-content"></i> Productos</a></li>
+                    <li><a href="#contact"><i class="bx bx-envelope"></i> Contacto</a></li>
+
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+            <button class="mobile-nav-toggle d-xl-none" type="button"><i class="icofont-navigation-menu"></i></button>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Portada Section ======= -->
+        <section class="d-flex flex-column justify-content-center align-items-center" id="portada" th:id="portada">
+            <div class="portada-container" data-aos="fade-in">
+                <h1>CityHunter Shop</h1>
+                <p>Expertos en <span class="typed" data-typed-items="Videojuegos, Consolas, Pc"></span></p>
+            </div>
+        </section>
+        <!-- End Portada -->
+
+        <!-- ======= About Section ======= -->
+        <section class="about" id="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>SOBRE NOSOTROS</h2>
+                    <p>En CityHunter, llevamos el apasionante mundo de los videojuegos a un nivel superior. Somos una empresa dedicada a brindarte experiencias de juego inigualables a través de nuestros servicios especializados en consolas, personalización de equipos y un completo soporte técnico.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <img alt="" class="img-fluid" src="assets/img/port1.jpg">
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <h3>ADMINISTRADOR</h3>
+                        <div class="row">
+                            
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Nombre:</strong> Oscar Ochoa
+                                    </li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> cityhunter.shop@gmail.com
+                                    </li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>whatsapp:</strong> 3138832693</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>QUE ES LO QUE HACEMOS?</h3>
+                        <p class="font-italic">
+                            Ofrecemos servicios técnicos tanto para consolas de videojuegos como para computadoras. Nuestro equipo de expertos está listo para resolver problemas técnicos, ya sean preventivos o correctivos, para mantener tus dispositivos en perfecto funcionamiento,
+                            Además de nuestros servicios técnicos, somos una tienda que ofrece una amplia variedad de objetos coleccionables relacionados con el mundo de los videojuegos y la cultura geek.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="icofont-rounded-right"></i> Servicio preventivo</li>
+                                    <li><i class="icofont-rounded-right"></i> Servicio Correctivo</li>
+                                    <li><i class="icofont-rounded-right"></i> Servicio Personalización y Modding</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="icofont-rounded-right"></i> Mangas</li>
+                                    <li><i class="icofont-rounded-right"></i> Animes</li>
+                                    <li><i class="icofont-rounded-right"></i> Ropa personalizada</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Section -->
+        <!-- ======= Resume Section ======= -->
+        <!-- ======= Proyectos Section ======= -->
+        <section class="proyectos section-bg" id="proyectos">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Productos CH</h2>
+                    <p>Te ofrecemos una variedad de productos sorprendentes.</p>
+                </div>
+
+                <div class="row" data-aos="fade-up">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="proyectos-filters">
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row proyectos-container" data-aos="fade-up" data-aos-delay="100">
+
+                    <!--       WEB API TEMPLATES         -->
+                    <div class="col-lg-4 col-md-6 proyectos-item filter-app filter-web">
+                        <div class="proyectos-wrap">
+                            <img alt="Web API Templates" class="img-fluid" src="assets/img/proyectos/WebAPI.jpg">
+                            <div class="proyectos-links">
+                                <a class="venobox" data-gall="proyectosGallery" href="assets/img/proyectos/WebAPI.jpg" title="Xbox One"><i class="bx bx-plus"></i></a>
+                                <a th:href="@{/ventas}" title="Mas detalles"><i
+                                    class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--       Node Articulo         -->
+                    <div class="col-lg-4 col-md-6 proyectos-item filter-articles">
+                        <div class="proyectos-wrap">
+                            <img alt="NodeJS Article" class="img-fluid" src="assets/img/proyectos/node.jpg">
+                            <div class="proyectos-links">
+                                <a class="venobox" data-gall="proyectosGallery" href="assets/img/proyectos/node.jpg" title="PlayStation"><i class="bx bx-plus"></i></a>
+                                <a th:href="@{/ventas}" title="Mas detalles"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--       Blockchain Articulos         -->
+                    <div class="col-lg-4 col-md-6 proyectos-item filter-articles">
+                        <div class="proyectos-wrap">
+                            <img alt="Blockchain Article" class="img-fluid" src="assets/img/proyectos/BlockchainFrameworks.jpg">
+                            <div class="proyectos-links">
+                                <a class="venobox" data-gall="proyectosGallery" href="assets/img/proyectos/BlockchainFrameworks.jpg" title="Dragonball Z"><i class="bx bx-plus"></i></a>
+                                <a th:href="@{/ventas}" title="Mas detalles"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--       WEB Personal        -->
+                    <div class="col-lg-4 col-md-6 proyectos-item filter-app filter-web">
+                        <div class="proyectos-wrap">
+                            <img alt="Web Personal" class="img-fluid" src="assets/img/proyectos/web.png">
+                            <div class="proyectos-links">
+                                <a class="venobox" data-gall="proyectosGallery" href="assets/img/proyectos/web.png" title="Xbox One"><i class="bx bx-plus"></i></a>
+                                <a th:href="@{/ventas}" title="Mas detalles"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--       RED SOCIAL SPRING        -->
+                    <div class="col-lg-4 col-md-6 proyectos-item filter-app filter-web">
+                        <div class="proyectos-wrap">
+                            <img alt="Red Social Spring" class="img-fluid" src="assets/img/proyectos/RedSocialSpring.png">
+                            <div class="proyectos-links">
+                                <a class="venobox" data-gall="proyectosGallery" href="assets/img/proyectos/RedSocialSpring.png" title="PlayStation Games"><i class="bx bx-plus"></i></a>
+                                <a th:href="@{/ventas}" title="Mas detalles"><i
+                                    class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--       ELASTIC COORRELATE        -->
+                    <div class="col-lg-4 col-md-6 proyectos-item filter-app filter-other">
+                        <div class="proyectos-wrap">
+                            <img alt="Elastic Correlate" class="img-fluid" src="assets/img/proyectos/elastic-correlate.jpg">
+                            <div class="proyectos-links">
+                                <a class="venobox" data-gall="proyectosGallery" href="assets/img/proyectos/elastic-correlate.jpg" title="One Piece"><i class="bx bx-plus"></i></a>
+                                <a th:href="@{/ventas}" title="Mas detalles"><i
+                                    class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Proyectos Section -->
+        <!-- ======= Contact Section ======= -->
+        <section class="contact" id="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                </div>
+
+                <div class="row" data-aos="fade-in">
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="email">
+                                <i class="icofont-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>cityhunter.shop@gmail.com</p>
+                            </div>
+                            <div class="email">
+                                <i class="icofont-envelope"></i>
+                                <h4>Telefono</h4>
+                                <p >3138832693</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                <br> &copy; CityHunter <strong><span>Oscar Ochoa</span></strong>
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <a class="back-to-top" href="#"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

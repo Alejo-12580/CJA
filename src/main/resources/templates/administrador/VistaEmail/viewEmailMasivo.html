@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Producto</title>
+
+  <link rel="stylesheet" th:href="@{/css/RegistroProd.css}">
+    <link rel="shortcut icon" th:href="@{/img/logoCityHunter.png}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url(/img/paredLadrillo.jpg);">
+<nav class="navbar" style="background-color: black;" >
+    <div class="container-fluid"   style="background-image: url(/img/BannerPG.png);background-size: cover ; height: 100px;">
+        <p class="navbar-brand" >
+
+        </p>
+        <div th:if="${user != null}" class="login">
+
+
+            <a class="botonMenu" th:href="@{#}">Ventas</a>
+            <a class="botonMenu" th:href="@{/listarAgenAdmin}">Servicio Tecnico</a>
+            <a class="botonMenu" th:href="@{/productos}">Inventario</a>
+
+            <a class="botonMenu" th:href="@{'/cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+
+            <a th:text="${user.nombre}" style="color: white; font-family: Calibri"></a>
+
+            <a  th:href= "@{'editUser/'+${user.id}}" class="navbar-brand" href="#">
+                <img src="/img/avatar.png" alt="" width="50" height="45 ">
+
+            </a>
+
+
+        </div>
+        <div th:unless="${user != null}">
+
+        </div>
+
+
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2" >
+            <div class="izquierda">
+                <div class="input-group mb-3">
+                    <button class="btn btn-danger" type="button" id="button-addon2"> <a th:href="@{/ordenLista}"  style="text-decoration: none; color:white" >Atras</a></button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8" style="background-color:#9e9696;">
+            <div class="derecha">
+                <h4>EMAIL</h4>
+
+
+                <div class="container">
+
+                    <div class="row" style="border-color: #b90e0e">
+                        <form th:action="@{/enviarEmailMasivo}" method="post" enctype="multipart/form-data">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Destinatario </label>
+                            <select class="form-select" aria-label="Default select example" type="number" name="opcion">
+                                <option value="1">Administradores</option>
+                                <option value="2">Clientes</option>
+
+                            </select>
+                            </div>
+
+                            <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" name="asunto" id="exampleFormControlInput1" placeholder="Asunto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                             <textarea class="form-control" name="cuerpo" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                        </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Archivo</label>
+                            <input type="file" name="archivo"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-danger" type="submit">Enviar Correo</button>
+                            </div>
+
+                        </form>
+                    </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
+</html>

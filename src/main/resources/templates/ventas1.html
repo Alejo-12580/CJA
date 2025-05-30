@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/ventas.css}">
+    <link rel="shortcut icon" href="../img/logoCityHunter.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> COMPRA CITY HUNTER </title>
+    <header class="header">
+        <nav th:if="${user==null}">
+            <a th:href="@{/IniciarSesion}">Iniciar Sesión</a>
+            <a th:href="@{/newUserCliente}">Registrarse</a>
+            <a th:href="@{/menu}">Inicio</a>
+            <a th:href="@{/menuST}">Servicio Técnico</a>
+    </nav>
+        <nav th:unless="${user==null}">
+            <a th:href="@{/menu}">Inicio</a>
+            <a th:href="@{/menuST}">Servicio Técnico</a>
+            <a th:href="@{'/cerrarSesion/'+${user.id}}">Cerrar Sesion</a>
+            <label style="color: white" th:text="${user.nombre}"></label>
+            <a   class="navbar-brand" href="#">
+                <img src="/img/avatar.png" alt="" width="50" height="45 ">
+            </a>
+
+        </nav>
+    </header>
+
+   <body>
+
+    <main class="main-container">
+    <section class="content">
+        <article class="gallery">
+            <div class="gallery__image-container">
+            </div>
+
+        </article>
+        <div class="containerfor">
+            <div class="cliente">
+                <H3 style="color: red" >NOMBRE USUARIO </H3>
+                <label th:text="${user.nombre}">:</label>
+                <br>
+                <H3 style="color: red">CORREO ELECTRONICO </H3>
+                <label th:text="${user.email}">:</label>
+                <br>
+                <H3 style="color: red" >DIRECCION RECIDENCIA </H3>
+                <label th:text="${user.direccion}">:</label>
+                <br>
+                <H3 style="color: red" >NUMERO DE TELEFONO </H3>
+                <label th:text="${user.telefono}">:</label>
+
+        </div>
+        <div class="container-details-producto">
+            <div class="form-group">
+                <label for="tipo de pago">Tipo de pago</label>
+                <select name="tipo de pago" id="tipo de pago">
+                    <option disabled selected>Tipo de pago</option>
+                    <option value="daviplta">Efectivo</option>
+                </select>
+                <p>--</p>
+                <a class="custom-button" th:href="@{/factura}">comprarProductos </a>
+            </div>
+        </div>
+        </div>
+
+    <div class="producto"  th:each="detalleVenta:${detalleVenta}" >
+         <span style="color: red" th:text="${detalleVenta.productos.nombre}"></span>
+  <main>
+    <div class="container.img">
+        <img style="width: 150px;height: 150px" th:src="@{/imagenes/} + ${detalleVenta.productos.imagen}"  />
+    </div>
+     <div class="container-inf-producto">
+      <div class="container-price">
+          <div class="producto">
+              <span>TOTAL</span>
+          <span style="color: #e62b0a" th:text="${detalleVenta.cantidad * detalleVenta.productos.precio}"></span>
+              <br>
+              <span>Talla_capacidad </span>
+              <span style="color: red" th:text="${detalleVenta.productos.talla_capacidad}"></span>
+              <br>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.?</p>
+     </div>
+     </div>
+     </div>
+  </main>
+
+   </body>
+</html>

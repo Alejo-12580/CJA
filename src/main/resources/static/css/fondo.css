@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+body {
+    font-family: 'poppins',sans-serif;
+
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    background-image: url(../img/BannerPG.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+nav>a {
+
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+    background-color:red;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    padding: 5px 15px;
+
+}
+.menu .navbar ul li {
+    float: left;
+}
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.menu iabel{
+    cursor: pointer;
+    display: none;
+}
+
+.header-txt span{
+    font-size: 25px;
+}
+
+.header-txt p{
+    color: #af1919;
+    padding: 0 250px;
+    margin: 25px 0;
+
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 11px 25px ;
+    background-color: #da1125;
+    color: rgb(250, 250, 250);
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: 'bebas neie',cursive;
+    margin: 25px 0;
+    border: 0;
+}
+
+.btn-1:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.header-dir{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.dir h3{
+    font-size: 18px;
+}
+.dir p{
+    font-size: 25px;
+    color: rgb(207, 72, 18);
+    text-transform: uppercase;
+}
+.welcome{
+    display: flex;
+}
+
+.welcome-1{
+    background-image: url(../img/tienda.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+}
+.welcome-2{
+    width: 60%;
+    padding: 150px 250px  150px  100px;
+    background-color: rgba(255, 255, 255, 0.993);
+}
+h2{
+    font-size: 80px;
+    line-height: 100px;
+    color: rgb(240, 14, 14);
+    text-transform: uppercase;
+    font-family: 'bebas neie',cursive;
+    margin-bottom: 30px;
+}
+p{
+    font-size: 14px;
+    color: #050505;
+    margin:  25px 0;
+}
+.b1{
+    color: #275f4d;
+}
+.servicios{
+    padding: 150px 0;
+    text-align: center;
+}
+
+.servicios-txt p {
+    padding: 30px 150px;
+}
+.servicios-group{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+.servicios1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+.servicios1 img{
+    width: 190px;
+    height: 190px;
+    padding: 25px 25px;
+    margin-bottom: 0px;
+
+}
+
+.servicios1 td{
+    font-size: 20px;
+    color: #f50713;
+
+}
+
+. servicios1 nav {
+    color: #f5f5f5;
+    padding: 0;
+    width: 80%;
+    background-color: rgb(248, 17, 0);
+    border:none;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 3px;
+
+}
+footer {
+    background: #000000;
+    padding: 60px 0 30px 0;
+    margin-top: 30px;
+    overflow: hidden;
+
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #ffffff;
+    border-bottom: 3px solid #d32020;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p {
+    color: #ffffff;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #ffffff;
+}
+footer {
+    background: #000000;
+    padding: 60px 0 30px 0;
+    margin-top: 30px;
+    overflow: hidden;
+
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #ffffff;
+    border-bottom: 3px solid #d32020;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p {
+    color: #ffffff;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #ffffff;
+}
